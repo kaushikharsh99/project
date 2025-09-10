@@ -1,7 +1,6 @@
 import pandas as pd
 import random
 
-# Normalize text
 df['Level'] = df['Level'].str.strip().str.lower()
 df['Goal'] = df['Goal'].str.strip().str.lower()
 df['Muscle'] = df['Muscle'].str.strip().str.lower()
@@ -53,9 +52,7 @@ def estimate_level():
 
     return levels[final_level_index]
 
-# -------------------------
-# Generate weekly workout
-# -------------------------
+
 def generate_plan(level, goal):
     week_plan = {
         "Day 1": "Push",
@@ -90,9 +87,6 @@ def generate_plan(level, goal):
                     print(f" - {row['Exercise']} ({row['Sets']}x{row['Reps']} rest {row['Rest']}s) → {row['Notes']}")
         print()
 
-# -------------------------
-# Main
-# -------------------------
 print("===================================")
 print("   CALISTHENICS WORKOUT DESIGNER")
 print("===================================\n")
