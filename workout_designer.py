@@ -1,13 +1,6 @@
 import pandas as pd
 import random
 
-# Load dataset
-try:
-    df = pd.read_csv("workout_dataset.csv")
-except FileNotFoundError:
-    print("ERROR: 'workout_dataset.csv' not found. Please add the dataset first.")
-    exit()
-
 # Normalize text
 df['Level'] = df['Level'].str.strip().str.lower()
 df['Goal'] = df['Goal'].str.strip().str.lower()
