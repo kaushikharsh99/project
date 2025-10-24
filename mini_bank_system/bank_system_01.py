@@ -10,23 +10,23 @@ class BankAccount:
 
     
 
-    def deposit(self, amount):
-        if amount > 0:
-            self._balance += amount
-            self._record_transaction("Deposit", amount)
-            print(f" Deposited: ₹{amount:.2f}")
+    def deposit(self, ammount):
+        if ammount > 0:
+            self._balance += ammount
+            self._record_transaction("Deposit", ammount)
+            print(f" Deposited: ₹{ammount:.2f}")
         else:
-            print(" Deposit amount must be positive.")
+            print(" Deposit ammount must be positive.")
 
-    def withdraw(self, amount):
-        if amount <= 0:
-            print(" Withdrawal amount must be positive.")
-        elif amount > self._balance:
+    def withdraw(self, ammount):
+        if ammount <= 0:
+            print(" Withdrawal ammount must be positive.")
+        elif ammount > self._balance:
             print(" Insufficient funds.")
         else:
-            self._balance -= amount
-            self._record_transaction("Withdraw", -amount)
-            print(f" Withdrew: ₹{amount:.2f}")
+            self._balance -= ammount
+            self._record_transaction("Withdraw", -ammount)
+            print(f" Withdrew: ₹{ammount:.2f}")
 
     def get_balance(self):
         return self._balance
@@ -36,10 +36,10 @@ class BankAccount:
 
     
 
-    def _record_transaction(self, transaction_type, amount):
+    def _record_transaction(self, transaction_type, ammount):
         """Store transaction with timestamp"""
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        self._transactions.append((timestamp, transaction_type, amount, self._balance))
+        self._transactions.append((timestamp, transaction_type, ammount, self._balance))
 
     def show_transactions(self):
         print(f"\n Transaction History for {self.account_holder}:")
@@ -47,8 +47,8 @@ class BankAccount:
             print("No transactions found.")
         else:
             for t in self._transactions:
-                time, t_type, amount, bal = t
-                print(f"[{time}] {t_type:12}  ₹{amount:8.2f}  →  Balance: ₹{bal:.2f}")
+                time, t_type, ammount, bal = t
+                print(f"[{time}] {t_type:12}  ₹{ammount:8.2f}  →  Balance: ₹{bal:.2f}")
         print("-" * 60)
 
 # Manage multiple accounts in one place
@@ -95,13 +95,13 @@ class BankSystem:
             elif choice == "2":
                 acc = self.get_account()
                 if acc:
-                    amt = float(input("Enter amount to deposit: "))
+                    amt = float(input("Enter ammount to deposit: "))
                     acc.deposit(amt)
 
             elif choice == "3":
                 acc = self.get_account()
                 if acc:
-                    amt = float(input("Enter amount to withdraw: "))
+                    amt = float(input("Enter ammount to withdraw: "))
                     acc.withdraw(amt)
 
             elif choice == "4":
