@@ -5,23 +5,23 @@ import { FaQuoteLeft, FaStar } from 'react-icons/fa';
 const testimonials = [
   {
     name: "Sarah Johnson",
-    role: "CEO at TechFlow",
+    role: "VP of Engineering at TechFlow",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
-    content: "Harsh is an exceptional developer. He delivered our platform ahead of schedule and the code quality was outstanding. His attention to detail is unmatched.",
+    content: "Harsh's churn prediction model was a game changer. We reduced customer attrition by 15% in the first quarter alone. His ability to translate data into strategy is rare.",
     rating: 5
   },
   {
     name: "Michael Chen",
-    role: "Product Manager",
+    role: "Head of Data at DataDrive",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
-    content: "Working with Harsh was a breeze. He understood our requirements perfectly and added his own creative inputs that made the final product even better.",
+    content: "The RAG pipeline Harsh architected allows our support team to answer queries instantly with 99% accuracy. He truly understands the nuances of LLM deployment.",
     rating: 5
   },
   {
     name: "Emily Davis",
-    role: "Marketing Director",
+    role: "CTO at StartupX",
     image: "https://randomuser.me/api/portraits/women/68.jpg",
-    content: "I was impressed by his technical expertise and communication skills. He kept us updated throughout the process and solved complex problems effortlessly.",
+    content: "I was impressed by his deep understanding of computer vision. The defect detection system he built saved us thousands of manual inspection hours.",
     rating: 5
   }
 ];

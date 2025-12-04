@@ -4,31 +4,31 @@ import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 
 const experiences = [
   {
-    title: "Senior Frontend Engineer",
-    company: "Tech Nova Inc.",
+    title: "Senior Data Scientist",
+    company: "Innovate AI Labs",
     date: "2023 - Present",
-    description: "Leading the frontend migration to Next.js, improving site performance by 40%. Mentoring junior developers and establishing best practices.",
+    description: "Leading the generative AI initiative. Fine-tuned Llama-3 for domain-specific tasks and optimized RAG pipelines, reducing hallucination rates by 30%.",
     type: "work"
   },
   {
-    title: "Full Stack Developer",
-    company: "Creative Agency",
+    title: "Machine Learning Engineer",
+    company: "DataDriven Corp",
     date: "2021 - 2023",
-    description: "Developed award-winning websites for global clients. Integrated headless CMS solutions and complex animations.",
+    description: "Designed end-to-end ML pipelines using AWS SageMaker. Deployed XGBoost models for churn prediction, handling 1M+ daily requests with <50ms latency.",
     type: "work"
   },
   {
-    title: "Freelance Developer",
-    company: "Self Employed",
-    date: "2020 - 2021",
-    description: "Delivered custom web solutions for local businesses. Managed the entire lifecycle from design to deployment.",
+    title: "Data Analyst",
+    company: "FinTech Solutions",
+    date: "2019 - 2021",
+    description: "Analyzed complex financial datasets using Python & SQL. Built interactive Tableau dashboards that helped stakeholders identify key revenue drivers.",
     type: "work"
   },
   {
-    title: "B.S. Computer Science",
-    company: "University of Technology",
-    date: "2016 - 2020",
-    description: "Graduated with honors. specialized in Human-Computer Interaction and Web Technologies.",
+    title: "M.S. Artificial Intelligence",
+    company: "Tech University",
+    date: "2017 - 2019",
+    description: "Specialized in Deep Learning and Natural Language Processing. Thesis on 'Efficient Transformer Architectures for Edge Devices'.",
     type: "education"
   }
 ];
