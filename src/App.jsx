@@ -2,19 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import { FaArrowUp } from 'react-icons/fa';
+import { Routes, Route, useLocation } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Stats from './components/Stats';
-import About from './components/About';
-import TechStack from './components/TechStack';
-import Services from './components/Services';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Testimonials from './components/Testimonials';
-import CTA from './components/CTA';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
+
+import Home from './pages/Home';
+import AllProjects from './pages/AllProjects';
+import ProjectDetails from './pages/ProjectDetails';
 
 function App() {
   const { scrollYProgress, scrollY } = useScroll();
@@ -26,6 +22,12 @@ function App() {
 
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Reset scroll on route change
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
@@ -60,16 +62,11 @@ function App() {
       <Navbar />
       
       <main>
-        <Hero />
-        <TechStack />
-        <About />
-        <Stats />
-        <Services />
-        <Experience />
-        <Projects />
-        <Testimonials />
-        <CTA />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<AllProjects />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
+        </Routes>
       </main>
       
       <Footer />

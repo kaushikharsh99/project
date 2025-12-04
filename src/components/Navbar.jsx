@@ -1,34 +1,72 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = ['home', 'about', 'experience', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      if (location.pathname === '/') {
+        const sections = ['home', 'about', 'experience', 'projects', 'contact'];
+        const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
-            setActiveSection(section);
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const offsetTop = element.offsetTop;
+            const height = element.offsetHeight;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
+              setActiveSection(section);
+            }
           }
         }
+      } else {
+        setActiveSection('');
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
+
+  const handleNavClick = (sectionId) => {
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/', { state: { target: sectionId } });
+      // We will handle the scrolling in Home.jsx using useEffect
+      // Alternatively, basic hashtag navigation works often if setup:
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+    setIsOpen(false);
+  };
+  
+  // Handle scroll from other pages
+  useEffect(() => {
+     if (location.state && location.state.target && location.pathname === '/') {
+        const element = document.getElementById(location.state.target);
+        if (element) {
+           setTimeout(() => {
+             element.scrollIntoView({ behavior: 'smooth' });
+           }, 100);
+        }
+     }
+  }, [location]);
+
 
   const navVariants = {
     hidden: { y: -100 },
@@ -54,7 +92,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0 cursor-pointer">
+          <div className="flex-shrink-0 cursor-pointer" onClick={() => navigate('/')}>
              <motion.span 
                whileHover={{ scale: 1.05 }}
                className="font-bold text-2xl tracking-wider text-white"
@@ -70,13 +108,13 @@ const Navbar = () => {
                 const isActive = activeSection === sectionId;
                 
                 return (
-                  <motion.a
+                  <motion.button
                     key={item}
-                    href={`#${sectionId}`}
+                    onClick={() => handleNavClick(sectionId)}
                     variants={linkVariants}
                     whileHover="hover"
                     whileTap="tap"
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors relative ${
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors relative cursor-pointer bg-transparent border-none ${
                       isActive ? 'text-white' : 'text-gray-300 hover:text-white'
                     }`}
                   >
@@ -88,7 +126,7 @@ const Navbar = () => {
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
-                  </motion.a>
+                  </motion.button>
                 );
               })}
             </div>
@@ -119,16 +157,15 @@ const Navbar = () => {
                  const sectionId = item.toLowerCase();
                  const isActive = activeSection === sectionId;
                  return (
-                    <a
+                    <button
                       key={item}
-                      href={`#${sectionId}`}
-                      className={`block px-3 py-2 rounded-md text-base font-medium text-center ${
+                      onClick={() => handleNavClick(sectionId)}
+                      className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
                         isActive ? 'text-white bg-blue-500/20' : 'text-gray-300 hover:text-white hover:bg-white/10'
                       }`}
-                      onClick={() => setIsOpen(false)}
                     >
                       {item}
-                    </a>
+                    </button>
                  );
               })}
             </div>
