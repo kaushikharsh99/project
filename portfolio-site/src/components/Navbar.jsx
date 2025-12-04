@@ -10,6 +10,8 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const navItems = ['Home', 'About', 'Experience', 'Projects', 'Blog', 'Resume', 'Contact'];
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -28,29 +30,43 @@ const Navbar = () => {
             }
           }
         }
+      } else if (location.pathname.startsWith('/blog')) {
+        setActiveSection('blog');
+      } else if (location.pathname === '/resume') {
+        setActiveSection('resume');
       } else {
         setActiveSection('');
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Trigger once on mount/location change to set initial active state
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  const handleNavClick = (sectionId) => {
-    if (location.pathname === '/') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+  const handleNavClick = (item) => {
+    const lowerItem = item.toLowerCase();
+    
+    if (lowerItem === 'blog') {
+      navigate('/blog');
+    } else if (lowerItem === 'resume') {
+      navigate('/resume');
     } else {
-      navigate('/', { state: { target: sectionId } });
-      // We will handle the scrolling in Home.jsx using useEffect
-      // Alternatively, basic hashtag navigation works often if setup:
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      // Handle scroll links
+      if (location.pathname === '/') {
+        const element = document.getElementById(lowerItem);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        navigate('/', { state: { target: lowerItem } });
+        setTimeout(() => {
+          const element = document.getElementById(lowerItem);
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
     }
     setIsOpen(false);
   };
@@ -103,14 +119,14 @@ const Navbar = () => {
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((item) => {
+              {navItems.map((item) => {
                 const sectionId = item.toLowerCase();
                 const isActive = activeSection === sectionId;
                 
                 return (
                   <motion.button
                     key={item}
-                    onClick={() => handleNavClick(sectionId)}
+                    onClick={() => handleNavClick(item)}
                     variants={linkVariants}
                     whileHover="hover"
                     whileTap="tap"
@@ -153,13 +169,13 @@ const Navbar = () => {
             className="md:hidden glass bg-gray-900/95 overflow-hidden"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((item) => {
+              {navItems.map((item) => {
                  const sectionId = item.toLowerCase();
                  const isActive = activeSection === sectionId;
                  return (
                     <button
                       key={item}
-                      onClick={() => handleNavClick(sectionId)}
+                      onClick={() => handleNavClick(item)}
                       className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
                         isActive ? 'text-white bg-blue-500/20' : 'text-gray-300 hover:text-white hover:bg-white/10'
                       }`}

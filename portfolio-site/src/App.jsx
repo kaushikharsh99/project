@@ -11,6 +11,9 @@ import Preloader from './components/Preloader';
 import Home from './pages/Home';
 import AllProjects from './pages/AllProjects';
 import ProjectDetails from './pages/ProjectDetails';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import Resume from './pages/Resume';
 
 function App() {
   const { scrollYProgress, scrollY } = useScroll();
@@ -66,6 +69,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<AllProjects />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </main>
       
