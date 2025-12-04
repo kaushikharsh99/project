@@ -1,66 +1,66 @@
 export const projects = [
   {
-    id: 'ecommerce-platform',
-    title: 'E-Commerce Platform',
-    description: 'A full-featured online store built with Next.js, Stripe, and Sanity CMS. Features include user authentication, cart management, and secure checkout.',
-    longDescription: 'This e-commerce platform was built to provide a seamless shopping experience. It integrates Stripe for secure payments and Sanity CMS for easy content management. The frontend is optimized for speed using Next.js server-side rendering.',
-    tags: ['Next.js', 'Stripe', 'Sanity', 'Tailwind'],
+    id: 'rag-document-assistant',
+    title: 'RAG Document Assistant',
+    description: 'An intelligent document chatbot using Retrieval-Augmented Generation. Users can upload PDFs and ask questions in natural language.',
+    longDescription: 'This project leverages LangChain and OpenAI GPT-4 to create a conversational interface for documents. It uses Pinecone for vector storage to enable semantic search, ensuring the model answers based on the uploaded content rather than hallucinations.',
+    tags: ['Python', 'LangChain', 'OpenAI', 'Pinecone', 'Streamlit'],
     github: '#',
     demo: '#',
     image: 'https://via.placeholder.com/500x300',
     features: [
-      'User Authentication with NextAuth',
-      'Stripe Payment Gateway Integration',
-      'Real-time Inventory Management',
-      'Responsive Mobile Design'
+      'PDF & Text File Ingestion',
+      'Semantic Search with Vector Database',
+      'Context-aware Responses',
+      'Source Citation'
     ]
   },
   {
-    id: 'task-management-app',
-    title: 'Task Management App',
-    description: 'A productivity application helping teams collaborate efficiently. Real-time updates, drag-and-drop interface, and detailed analytics.',
-    longDescription: 'Designed for remote teams, this task management app offers real-time synchronization using Firebase. The drag-and-drop interface makes organizing tasks intuitive, while the analytics dashboard provides insights into team productivity.',
-    tags: ['React', 'Firebase', 'Redux', 'Material UI'],
+    id: 'customer-churn-prediction',
+    title: 'Customer Churn Prediction',
+    description: 'A machine learning pipeline to predict customer churn for a telecom company using XGBoost and Scikit-learn.',
+    longDescription: 'This end-to-end ML project involves data preprocessing, feature engineering, and model training. It uses XGBoost to achieve 92% accuracy in identifying at-risk customers. The model is served via a FastAPI endpoint.',
+    tags: ['Python', 'Scikit-learn', 'XGBoost', 'FastAPI', 'Pandas'],
     github: '#',
     demo: '#',
     image: 'https://via.placeholder.com/500x300',
     features: [
-      'Real-time Collaboration',
-      'Drag and Drop Kanban Board',
-      'Team Analytics Dashboard',
-      'Dark Mode Support'
+      'Data Cleaning & Feature Engineering',
+      'Model Hyperparameter Tuning',
+      'Real-time Inference API',
+      'Dockerized Deployment'
     ]
   },
   {
-    id: 'ai-content-generator',
-    title: 'AI Content Generator',
-    description: 'SaaS platform utilizing OpenAI API to generate marketing copy. Includes template management and history tracking.',
-    longDescription: 'Leveraging the power of OpenAI, this SaaS tool helps marketers generate high-quality copy in seconds. Users can save their favorite templates and track their usage history.',
-    tags: ['TypeScript', 'OpenAI', 'Node.js', 'PostgreSQL'],
+    id: 'traffic-sign-recognition',
+    title: 'Traffic Sign Recognition',
+    description: 'Computer Vision model capable of classifying traffic signs in real-time using Convolutional Neural Networks (CNNs).',
+    longDescription: 'Built with TensorFlow and Keras, this CNN model was trained on the GTSRB dataset. It achieves high accuracy in varying lighting conditions. The project includes a web interface for uploading images to test the classifier.',
+    tags: ['TensorFlow', 'Keras', 'OpenCV', 'Python', 'Deep Learning'],
     github: '#',
     demo: '#',
     image: 'https://via.placeholder.com/500x300',
     features: [
-      'OpenAI GPT-4 Integration',
-      'Custom Template Builder',
-      'Usage Analytics & Billing',
-      'Export to PDF/Markdown'
+      'Custom CNN Architecture',
+      'Data Augmentation Techniques',
+      'Real-time Image Processing',
+      'High Classification Accuracy'
     ]
   },
   {
-    id: 'portfolio-website',
-    title: 'Portfolio Website',
-    description: 'Modern portfolio site with 3D animations and interactive elements to showcase creative work.',
-    longDescription: 'This portfolio website serves as a digital showcase for my work. It features 3D elements using Three.js and smooth animations with Framer Motion to create an immersive user experience.',
-    tags: ['Three.js', 'React', 'GSAP', 'WebGL'],
+    id: 'stock-market-forecasting',
+    title: 'Stock Market Forecasting',
+    description: 'Time-series forecasting model using LSTM neural networks to predict stock price trends based on historical data.',
+    longDescription: 'This project utilizes Long Short-Term Memory (LSTM) networks to analyze historical stock data. It includes a dashboard built with Plotly Dash to visualize predicted trends vs. actual market movement.',
+    tags: ['PyTorch', 'LSTM', 'Plotly', 'Pandas', 'Time Series'],
     github: '#',
     demo: '#',
     image: 'https://via.placeholder.com/500x300',
     features: [
-      '3D Interactive Elements',
-      'Smooth Scroll Animations',
-      'Responsive Design',
-      'Performance Optimized'
+      'LSTM Sequence Modeling',
+      'Historical Data Analysis',
+      'Interactive Dashboards',
+      'Trend Visualization'
     ]
   }
 ];

@@ -28,11 +28,11 @@ const Hero = () => {
             I build{' '}
             <TypeAnimation
               sequence={[
-                'web applications.',
+                'predictive models.',
                 1000,
-                'digital experiences.',
+                'intelligent agents.',
                 1000,
-                'scalable systems.',
+                'data pipelines.',
                 1000,
               ]}
               wrapper="span"
@@ -43,7 +43,7 @@ const Hero = () => {
           </div>
 
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            I&apos;m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I&apos;m focused on building accessible, human-centered products.
+            I&apos;m a Data Scientist specializing in building intelligent systems. Currently, I&apos;m focused on researching Large Language Models and their applications in specialized domains.
           </p>
 
           <motion.div 

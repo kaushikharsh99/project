@@ -1,25 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaPython, FaDocker, FaAws, FaGitAlt, FaFigma, FaLinux, FaRust, FaVuejs } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql, SiGo } from 'react-icons/si';
+import { FaPython, FaDocker, FaAws, FaGitAlt, FaLinux } from 'react-icons/fa';
+import { SiPytorch, SiTensorflow, SiPandas, SiNumpy, SiScikitlearn, SiJupyter, SiHuggingface, SiOpencv, SiKeras, SiMysql, SiPostgresql } from 'react-icons/si';
 
 const techs = [
-  { icon: FaReact, color: "#61DAFB" },
-  { icon: SiNextdotjs, color: "#ffffff" },
-  { icon: SiTypescript, color: "#3178C6" },
-  { icon: SiTailwindcss, color: "#06B6D4" },
-  { icon: FaNodeJs, color: "#339933" },
-  { icon: SiMongodb, color: "#47A248" },
-  { icon: SiPostgresql, color: "#4169E1" },
   { icon: FaPython, color: "#3776AB" },
-  { icon: SiGo, color: "#00ADD8" },
-  { icon: FaRust, color: "#DEA584" },
-  { icon: FaDocker, color: "#2496ED" },
+  { icon: SiPytorch, color: "#EE4C2C" },
+  { icon: SiTensorflow, color: "#FF6F00" },
+  { icon: SiScikitlearn, color: "#F7931E" },
+  { icon: SiPandas, color: "#150458" },
+  { icon: SiNumpy, color: "#013243" },
+  { icon: SiJupyter, color: "#F37626" },
+  { icon: SiHuggingface, color: "#FFD21E" },
+  { icon: SiOpencv, color: "#5C3EE8" },
+  { icon: SiKeras, color: "#D00000" },
   { icon: FaAws, color: "#FF9900" },
-  { icon: FaGitAlt, color: "#F05032" },
-  { icon: FaFigma, color: "#F24E1E" },
+  { icon: FaDocker, color: "#2496ED" },
+  { icon: SiPostgresql, color: "#4169E1" },
+  { icon: SiMysql, color: "#4479A1" },
   { icon: FaLinux, color: "#FCC624" },
-  { icon: FaVuejs, color: "#4FC08D" },
+  { icon: FaGitAlt, color: "#F05032" },
 ];
 
 const TechStack = () => {

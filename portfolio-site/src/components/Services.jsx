@@ -1,31 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaDesktop, FaMobileAlt, FaPalette, FaRocket } from 'react-icons/fa';
+import { FaBrain, FaChartBar, FaDatabase, FaCloud } from 'react-icons/fa';
 
 const services = [
   {
-    title: "Web Development",
-    icon: FaDesktop,
-    description: "Building fast, responsive, and scalable websites using modern frameworks like React and Next.js.",
-    features: ["Custom Frontend", "API Integration", "Performance Optimization"]
+    title: "Machine Learning",
+    icon: FaBrain,
+    description: "Developing predictive models and intelligent algorithms to solve complex business problems using state-of-the-art techniques.",
+    features: ["Predictive Analytics", "Classification Systems", "Recommendation Engines"]
   },
   {
-    title: "Mobile Apps",
-    icon: FaMobileAlt,
-    description: "Creating native-like mobile experiences for iOS and Android using cross-platform technologies.",
-    features: ["React Native", "Flutter", "PWA Development"]
+    title: "Deep Learning & NLP",
+    icon: FaCloud, // Using Cloud as a placeholder for heavy compute/AI, or import FaRobot if available
+    description: "Building advanced neural networks for computer vision, natural language processing, and generative AI applications.",
+    features: ["LLM Fine-tuning", "Object Detection", "Sentiment Analysis"]
   },
   {
-    title: "UI/UX Design",
-    icon: FaPalette,
-    description: "Designing intuitive and visually appealing interfaces that prioritize user experience and accessibility.",
-    features: ["Wireframing", "Prototyping", "Design Systems"]
+    title: "Data Analysis",
+    icon: FaChartBar,
+    description: "Transforming raw data into actionable insights through cleaning, visualization, and statistical analysis.",
+    features: ["Data Visualization", "Statistical Modeling", "Business Intelligence"]
   },
   {
-    title: "SEO & Performance",
-    icon: FaRocket,
-    description: "Optimizing web applications for search engines and speed to ensure maximum visibility and retention.",
-    features: ["Technical SEO", "Core Web Vitals", "Analytics Setup"]
+    title: "Model Deployment",
+    icon: FaDatabase,
+    description: "End-to-end MLOps pipelines to deploy models into production, ensuring scalability and real-time performance.",
+    features: ["Docker & Kubernetes", "API Development", "Model Monitoring"]
   }
 ];
 
@@ -43,7 +43,7 @@ const Services = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4"><span className="text-blue-500">04.</span> What I Do</h2>
           <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full"></div>
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            I help businesses and individuals bring their ideas to life with a comprehensive range of technical services.
+            I help businesses transform data into value with a comprehensive range of AI and Data Science services.
           </p>
         </motion.div>
 

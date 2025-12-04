@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaDatabase, FaCode } from 'react-icons/fa';
+import { FaBrain, FaNetworkWired, FaRobot, FaTools } from 'react-icons/fa';
 
 const About = () => {
   const skills = [
-    { name: 'Frontend', icon: <FaReact className="text-4xl text-blue-400" />, items: ['React', 'Tailwind', 'Next.js', 'TypeScript'] },
-    { name: 'Backend', icon: <FaNodeJs className="text-4xl text-green-500" />, items: ['Node.js', 'Express', 'Python', 'Go'] },
-    { name: 'Database', icon: <FaDatabase className="text-4xl text-yellow-500" />, items: ['PostgreSQL', 'MongoDB', 'Redis'] },
-    { name: 'Tools', icon: <FaCode className="text-4xl text-pink-500" />, items: ['Git', 'Docker', 'AWS', 'Linux'] },
+    { name: 'Machine Learning', icon: <FaBrain className="text-4xl text-blue-400" />, items: ['Python', 'Scikit-learn', 'XGBoost', 'Pandas'] },
+    { name: 'Deep Learning', icon: <FaNetworkWired className="text-4xl text-green-500" />, items: ['PyTorch', 'TensorFlow', 'Keras', 'OpenCV'] },
+    { name: 'NLP & GenAI', icon: <FaRobot className="text-4xl text-yellow-500" />, items: ['Transformers', 'LLMs', 'LangChain', 'HuggingFace'] },
+    { name: 'MLOps & Tools', icon: <FaTools className="text-4xl text-pink-500" />, items: ['Docker', 'AWS SageMaker', 'Git', 'MLflow'] },
   ];
 
   return (
@@ -32,13 +32,13 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Hello! My name is Harsh and I enjoy creating things that live on the internet. My interest in web development started back in 2020 when I decided to try creating a custom theme for my blog — turns out creating a complete website is surprisingly fun!
+              Hello! My name is Harsh and I enjoy finding patterns in chaos. My journey into the world of data started when I analyzed my first dataset using Python — detecting hidden trends felt like uncovering a secret language.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Fast-forward to today, and I&apos;ve had the privilege of working at an advertising agency, a start-up, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences.
+              Fast-forward to today, and I&apos;ve had the privilege of building predictive models for startups and optimizing RAG pipelines for enterprise solutions. My main focus these days is researching Efficient LLM Fine-tuning and building scalable AI agents that solve real-world problems.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed">
-              I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.
+              I also actively contribute to open-source AI projects and write about the latest advancements in Computer Vision and NLP.
             </p>
           </motion.div>
 

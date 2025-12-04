@@ -9,26 +9,38 @@ const Resume = () => {
 
   const experiences = [
     {
-      role: 'Senior Frontend Developer',
-      company: 'Tech Solutions Inc.',
-      period: '2022 - Present',
-      description: 'Leading the frontend team in re-architecting the main product dashboard using React and TypeScript. Improved performance by 40%.',
-      skills: ['React', 'TypeScript', 'GraphQL', 'Performance Optimization']
+      role: 'Senior Data Scientist',
+      company: 'Innovate AI Labs',
+      period: '2023 - Present',
+      description: 'Leading the development of Generative AI solutions for enterprise clients. Fine-tuning Llama-3 models and deploying RAG pipelines on AWS.',
+      skills: ['Python', 'PyTorch', 'AWS SageMaker', 'LLMs', 'LangChain']
     },
     {
-      role: 'Full Stack Developer',
-      company: 'Creative Agency',
-      period: '2020 - 2022',
-      description: 'Developed and maintained client websites and internal tools. Collaborated with designers to implement pixel-perfect UIs.',
-      skills: ['Next.js', 'Node.js', 'MongoDB', 'AWS']
+      role: 'Machine Learning Engineer',
+      company: 'DataDriven Corp',
+      period: '2021 - 2023',
+      description: 'Designed and deployed predictive models for customer churn and demand forecasting. Reduced model inference latency by 40% using ONNX.',
+      skills: ['Scikit-learn', 'TensorFlow', 'Docker', 'SQL', 'FastAPI']
+    },
+    {
+      role: 'Data Analyst',
+      company: 'FinTech Solutions',
+      period: '2019 - 2021',
+      description: 'Analyzed large financial datasets to identify fraud patterns. Created automated reporting dashboards using Tableau and Python.',
+      skills: ['SQL', 'Pandas', 'Tableau', 'Statistical Analysis']
     }
   ];
 
   const education = [
     {
+      degree: 'Master of Science in Artificial Intelligence',
+      school: 'Tech University',
+      period: '2018 - 2020'
+    },
+    {
       degree: 'Bachelor of Science in Computer Science',
       school: 'University of Technology',
-      period: '2016 - 2020'
+      period: '2014 - 2018'
     }
   ];
 
@@ -43,9 +55,9 @@ const Resume = () => {
         >
           <div className="text-center md:text-left mb-6 md:mb-0">
             <h1 className="text-4xl font-bold mb-2">Harsh Kaushik</h1>
-            <p className="text-xl text-blue-400">Full Stack Developer</p>
+            <p className="text-xl text-blue-400">Data Scientist | AI Engineer</p>
             <p className="text-gray-400 mt-2 max-w-lg">
-              Passionate developer with expertise in building scalable web applications and interactive user experiences.
+              Expert in Machine Learning, Deep Learning, and Large Language Models. Transforming raw data into actionable intelligence.
             </p>
           </div>
           
@@ -90,10 +102,13 @@ const Resume = () => {
                animate={{ opacity: 1, x: 0 }}
                transition={{ delay: 0.3 }}
             >
-              <h2 className="text-2xl font-bold mb-6 border-l-4 border-blue-500 pl-4">Projects</h2>
-              <p className="text-gray-400">
-                See the <Link to="/projects" className="text-blue-400 hover:underline">Projects Page</Link> for a detailed portfolio.
-              </p>
+              <h2 className="text-2xl font-bold mb-6 border-l-4 border-blue-500 pl-4">Technical Expertise</h2>
+               <ul className="list-disc list-inside text-gray-300 space-y-2">
+                 <li><strong>Machine Learning:</strong> Regression, Classification, Clustering, XGBoost, LightGBM</li>
+                 <li><strong>Deep Learning:</strong> CNNs, RNNs, LSTMs, Transformers, GANs</li>
+                 <li><strong>NLP:</strong> LLMs (GPT, Llama), HuggingFace, LangChain, BERT, Tokenization</li>
+                 <li><strong>MLOps:</strong> Docker, Kubernetes, MLflow, AWS SageMaker</li>
+               </ul>
             </motion.section>
           </div>
 
@@ -138,9 +153,9 @@ const Resume = () => {
                animate={{ opacity: 1, x: 0 }}
                transition={{ delay: 0.6 }}
             >
-              <h2 className="text-xl font-bold mb-4 text-gray-200">Skills</h2>
+              <h2 className="text-xl font-bold mb-4 text-gray-200">Core Stack</h2>
               <div className="flex flex-wrap gap-2">
-                {['JavaScript', 'React', 'Node.js', 'Python', 'Tailwind CSS', 'Git', 'SQL', 'AWS'].map((skill) => (
+                {['Python', 'PyTorch', 'TensorFlow', 'SQL', 'Pandas', 'NumPy', 'AWS', 'Docker'].map((skill) => (
                   <span key={skill} className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm font-medium">
                     {skill}
                   </span>
